@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="static/css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+	<title>Arun Sanjeev Finance Login System</title>
+</head>
+<body>
+	<div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image">
+                    <!-------Image-------->
+                    <img src="static/images/img7.png" alt="">
+                    <div class="text">
+                        <p>Asian Finance Development Corporation <i>- Namakkal</i></p>
+                    </div>
+                </div>
+                <div class="col-md-6 right">
+                    <div class="input-box">
+                        <form action="/SignUp_Confirmed" method="POST">
+                        <header>SignUp Permission</header>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category,message in messages %}
+                                <div class="alert alert-{{category}}">{{message}}</div>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        <div class="input-field">
+                            <td>Position</td>
+                            <td>
+                                <select name="position">
+                                    <option disabled> </option>
+                                    <option value="Staff">Staff</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Super User">Super User</option>
+                                </select>
+                            </td>
+                        </div>
+                        <br>
+                        <div class="input-field">
+                            <input type="password" class="input" id="password" required name="admin_key">
+                            <label for="password">Admin Key</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" class="input" id="con_password" required name="confirm_key">
+                            <label for="password">Confirm Admin Key</label>
+                        </div>
+                        <br>
+                        <div class="input-field">
+                            <input type="submit" class="submit" value="Sing Up">
+                        </div>
+                        <div class="signin">
+                            <span>I have an account <a href="/">Login here</a></span>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function() {
+        $(".alert").hide(7000);
+    });
+</script>

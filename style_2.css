@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: montserrat, sans-serif;
+}
+
+.page-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.970), rgba(0, 0, 0, 0.750)), url("/static/images/img10.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.swipe-in-text{
+  position: relative;
+}
+.swipe-in-text:after{
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  width: 0%;
+  bottom: 0;
+  z-index: 1;
+  background-color: #ff5858;
+  animation: swipe-in-text 1s ease-out 1s forwards;
+}
+
+.text{
+  color: #fff;
+  font-size: 70px;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade-in-text 0.01s linear 1.5s forwards;
+}
+
+.small{
+  font-size: 50px;
+  font-weight: 600;
+}
+
+@keyframes swipe-in-text{
+0%{
+  left: 0;
+  width: 0%;
+  right: 100%;
+}
+50%{
+  left: 0;
+  width: 100%;
+  right: 0%;
+}
+100%{
+  width: 0%;
+  left: 100%;
+}
+}
+
+@keyframes fade-in-text{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+
+.white:after{
+background-color: #fff;
+animation-delay: 1.5s;
+}
+.text: after{
+  animation-delay: 2s;
+}
+
+@media only screen and (max-width: 768px){
+  .text{
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .small{
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
